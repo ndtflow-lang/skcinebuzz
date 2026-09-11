@@ -3,16 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- NO-REFERRER: इससे APK WebView में कोई भी इमेज सर्वर ब्लॉक नहीं करता -->
+    <meta name="referrer" content="no-referrer">
     <title>Sk CineBuzz - Watch & Download Latest HD Movies & Web Series</title>
     <meta name="description" content="Download latest HD movies, Bollywood, Hollywood, South Hindi Dubbed movies, and web series for free in 480p, 720p, and 1080p on Sk CineBuzz.">
     <meta name="keywords" content="Sk CineBuzz, skcinebuzz, movie download, latest movies 480p 720p 1080p, free movie download site, download web series hindi, hindi dubbed movies download, full movie download online">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://sunnisk807325-ship-it.github.io/skcinebuzz/">
-
-    <meta property="og:title" content="Sk CineBuzz - Free HD Movie Download">
-    <meta property="og:description" content="Stream and download latest HD movies and web series on Sk CineBuzz.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sunnisk807325-ship-it.github.io/skcinebuzz/">
 
     <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/Gf1Rs1MV/1785838430902.png">
     <link rel="icon" type="image/png" sizes="192x192" href="https://i.ibb.co/Gf1Rs1MV/1785838430902.png">
@@ -212,6 +209,7 @@
             height: 50px;
             object-fit: cover;
             border-radius: 6px;
+            background: #222;
         }
 
         .suggest-info h5 {
@@ -308,7 +306,7 @@
 
         .trend-card img { 
             width: 100%; height: 195px; object-fit: cover; border-radius: 12px; margin-bottom: 8px; 
-            background: #1c1c1c;
+            background: #1c1c1c; display: block;
         }
 
         .trend-card h4 {
@@ -332,7 +330,7 @@
 
         .movie-card img { 
             width: 100%; height: 200px; object-fit: cover; 
-            background: #1c1c1c;
+            background: #1c1c1c; display: block;
         }
 
         .movie-info { padding: 10px; display: flex; flex-direction: column; flex-grow: 1; }
@@ -358,7 +356,7 @@
             display: flex; align-items: center; justify-content: center; gap: 5px;
         }
 
-        /* COMPACT PAGINATION (9/1 STYLE) */
+        /* COMPACT 9/1 PAGINATION */
         .pagination-container { 
             display: flex; 
             justify-content: center; 
@@ -402,7 +400,561 @@
             color: #E50914;
         }
 
-        /* SEO WEB-ONLY FOOTER SECTION */
+        /* SEO FOOTER */
+        .seo-web-footer {
+            margin: 30px 14px 10px 14px;
+            background: #131313;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #999;
+        }
+
+        .seo-breadcrumb {
+            color: #0088cc;
+            font-size: 12px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .seo-tags-box {
+            background: #171717;
+            border: 1px solid #262626;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 14px;
+            word-break: break-word;
+        }
+
+        .seo-tags-box strong {
+            color: #00ff88;
+        }
+
+        .seo-how-to-header {
+            text-align: center;
+            color: #0088cc;
+            font-size: 15px;
+            font-weight: 800;
+            margin: 12px 0 6px 0;
+        }
+
+        .seo-how-to-sub {
+            text-align: center;
+            color: #0088cc;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .seo-keywords-list {
+            text-align: center;
+            color: #aaa;
+            font-size: 11px;
+            font-weight: 600;
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        .seo-brand-powered {
+            text-align: center;
+            border-top: 1px solid #222;
+            padding-top: 10px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .seo-brand-powered span {
+            color: #E50914;
+            font-weight: 800;
+        }
+
+        /* OVERLAYS */
+        .menu-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85); z-index: 999999; display: none;
+            justify-content: flex-start;
+        }
+
+        .menu-box {
+            background: #141414; width: 260px; height: 100%; padding: 20px;
+            display: flex; flex-direction: column; gap: 15px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.5); border-right: 1px solid #222;
+        }
+
+        .menu-header {
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid #2a2a2a; padding-bottom: 15px; margin-bottom: 10px;
+        }
+
+        .menu-header h3 { font-size: 18px; color: #E50914; }
+        .menu-close-btn { background: none; border: none; color: #fff; font-size: 20px; cursor: pointer; }
+
+        .menu-item {
+            background: #1f1f1f; color: white; padding: 12px 15px; border-radius: 8px;
+            text-decoration: none; font-size: 14px; font-weight: 600;
+            display: flex; align-items: center; gap: 10px; cursor: pointer;
+        }
+
+        .menu-item:hover { background: #E50914; }
+        .menu-item.app-download-item { background: #E50914; color: #ffffff; }
+
+        /* POSTER & TIMER OVERLAY */
+        .ad-timer-overlay {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: radial-gradient(circle at center, #1a080a 0%, #080808 100%);
+            z-index: 500000; display: none;
+            flex-direction: column; align-items: center; justify-content: center;
+            padding: 20px; overflow-y: auto;
+        }
+
+        .ad-timer-box { 
+            position: relative; width: 95%; max-width: 380px; 
+            background: rgba(22, 22, 22, 0.95); 
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 25px 18px; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; gap: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(229, 9, 20, 0.15);
+        }
+
+        .top-right-close-btn {
+            position: absolute; top: 12px; right: 12px;
+            background: rgba(255, 255, 255, 0.1); color: #fff; border: none;
+            width: 32px; height: 32px; border-radius: 50%;
+            font-size: 14px; font-weight: bold; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 5;
+        }
+
+        .timer-status-text { color: #ffcc00; font-size: 16px; font-weight: 700; }
+
+        .ad-poster-wrapper {
+            width: 100%;
+            max-width: 250px;
+            aspect-ratio: 1 / 1;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+            margin: 5px auto;
+        }
+
+        .ad-poster-wrapper img {
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: center; display: block;
+        }
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- NO-REFERRER: इससे APK WebView में कोई भी इमेज सर्वर ब्लॉक नहीं करता -->
+    <meta name="referrer" content="no-referrer">
+    <title>Sk CineBuzz - Watch & Download Latest HD Movies & Web Series</title>
+    <meta name="description" content="Download latest HD movies, Bollywood, Hollywood, South Hindi Dubbed movies, and web series for free in 480p, 720p, and 1080p on Sk CineBuzz.">
+    <meta name="keywords" content="Sk CineBuzz, skcinebuzz, movie download, latest movies 480p 720p 1080p, free movie download site, download web series hindi, hindi dubbed movies download, full movie download online">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sunnisk807325-ship-it.github.io/skcinebuzz/">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/Gf1Rs1MV/1785838430902.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://i.ibb.co/Gf1Rs1MV/1785838430902.png">
+    <link rel="apple-touch-icon" href="https://i.ibb.co/Gf1Rs1MV/1785838430902.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0b0b0b;
+            color: #ffffff;
+            padding-bottom: 25px;
+            overflow-x: hidden;
+        }
+
+        body.blurred #appMainContent {
+            filter: blur(10px);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .movie-card, .trend-card, .cat-btn, .page-ctrl-btn, .play-btn, .menu-item, .header-download-btn, .search-filter-chip {
+            transition: transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.15s ease, filter 0.15s ease !important;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .movie-card:active, .trend-card:active, .cat-btn:active, .page-ctrl-btn:active, .play-btn:active, .menu-item:active, .header-download-btn:active, .search-filter-chip:active {
+            transform: scale(0.94) !important;
+            filter: brightness(0.85);
+        }
+
+        /* HEADER */
+        .header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            background-color: #121212;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            border-bottom: 1px solid #1f1f1f;
+        }
+
+        .header-bar .icon-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-right-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-download-btn {
+            background: linear-gradient(135deg, #E50914, #b20710);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(229, 9, 20, 0.5);
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-logo svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .brand-logo h1 {
+            font-size: 19px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+        }
+
+        /* SEARCH BAR & SUGGESTIONS */
+        .search-container { 
+            padding: 14px 16px 8px 16px; 
+            position: relative;
+            z-index: 100;
+        }
+
+        .search-wrapper { 
+            position: relative; 
+            display: flex; 
+            align-items: center; 
+            box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+            border-radius: 25px;
+        }
+
+        .search-wrapper .search-icon { 
+            position: absolute; 
+            left: 15px; 
+            color: #888; 
+            font-size: 15px; 
+            pointer-events: none;
+        }
+
+        .search-input {
+            width: 100%; 
+            padding: 12px 85px 12px 42px !important; 
+            font-size: 14px;
+            border: 1.5px solid #222; 
+            border-radius: 25px;
+            background-color: #161616; 
+            color: white; 
+            outline: none; 
+            transition: all 0.25s ease;
+        }
+
+        .search-input:focus { 
+            border-color: #E50914; 
+            box-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
+            background-color: #1a1a1a;
+        }
+
+        .search-action-btn {
+            position: absolute;
+            right: 10px;
+            background: #242424;
+            border: none;
+            color: #bbb;
+            font-size: 15px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+        }
+
+        #clearSearchBtn {
+            right: 48px;
+            color: #E50914;
+            font-weight: bold;
+            background: transparent;
+        }
+
+        .search-suggest-box {
+            position: absolute;
+            top: 60px;
+            left: 16px;
+            right: 16px;
+            background: #181818;
+            border: 1px solid #2d2d2d;
+            border-radius: 14px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.85);
+            max-height: 320px;
+            overflow-y: auto;
+            display: none;
+            flex-direction: column;
+            z-index: 1005;
+        }
+
+        .suggest-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            border-bottom: 1px solid #222;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .suggest-item:hover, .suggest-item:active {
+            background: #242424;
+        }
+
+        .suggest-item img {
+            width: 38px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 6px;
+            background: #222;
+        }
+
+        .suggest-info h5 {
+            font-size: 13px;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .suggest-info span {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .search-filters-row {
+            display: none;
+            gap: 8px;
+            padding: 8px 16px 4px 16px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .search-filters-row::-webkit-scrollbar { display: none; }
+
+        .search-filter-chip {
+            background: #1c1c1c;
+            border: 1px solid #2e2e2e;
+            color: #aaa;
+            padding: 5px 12px;
+            border-radius: 16px;
+            font-size: 11px;
+            font-weight: 600;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        .search-filter-chip.active {
+            background: #E50914;
+            color: #fff;
+            border-color: #E50914;
+        }
+
+        /* CATEGORIES */
+        .category-container {
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 8px;
+            padding: 10px 16px 16px 16px; 
+            overflow-x: auto; 
+            scrollbar-width: none;
+        }
+        .category-container::-webkit-scrollbar { display: none; }
+
+        .cat-btn {
+            background-color: #161616; color: #ccc; border: 1px solid #2a2a2a;
+            padding: 8px 16px; font-size: 13px; font-weight: 500; border-radius: 20px;
+            cursor: pointer; white-space: nowrap; flex: 0 0 auto;
+        }
+
+        .cat-btn.active { background-color: #E50914; color: #fff; border-color: #E50914; }
+
+        /* SECTIONS */
+        .section-header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 16px; margin-bottom: 12px;
+        }
+
+        .section-title { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+        .see-all { color: #aaa; font-size: 12px; text-decoration: none; }
+
+        /* TRENDING CAROUSEL */
+        .trending-carousel-container {
+            position: relative;
+            padding: 0 16px;
+            margin-bottom: 25px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+        }
+        .trending-carousel-container::-webkit-scrollbar { display: none; }
+
+        .trending-slider { display: flex; gap: 12px; transition: transform 0.5s ease-in-out; }
+
+        .trend-card {
+            flex: 0 0 140px; display: flex; flex-direction: column;
+            cursor: pointer; position: relative; border-radius: 12px;
+        }
+
+        .trend-badge {
+            position: absolute; top: 5px; left: 5px; background: #E50914;
+            color: white; font-size: 10px; font-weight: bold; padding: 2px 6px;
+            border-radius: 4px; z-index: 2;
+        }
+
+        .trend-card img { 
+            width: 100%; height: 195px; object-fit: cover; border-radius: 12px; margin-bottom: 8px; 
+            background: #1c1c1c; display: block;
+        }
+
+        .trend-card h4 {
+            font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden;
+            text-overflow: ellipsis; margin-bottom: 4px;
+        }
+
+        .meta-info { display: flex; align-items: center; gap: 10px; font-size: 11px; color: #aaa; }
+        .like-display { color: #ff3366; font-size: 12px; display: inline-flex; align-items: center; gap: 3px; }
+
+        /* MOVIE GRID */
+        .movie-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;
+            padding: 0 16px; margin-bottom: 20px;
+        }
+
+        .movie-card {
+            background-color: #141414; border-radius: 12px; overflow: hidden;
+            cursor: pointer; border: 1px solid #1f1f1f; display: flex; flex-direction: column;
+        }
+
+        .movie-card img { 
+            width: 100%; height: 200px; object-fit: cover; 
+            background: #1c1c1c; display: block;
+        }
+
+        .movie-info { padding: 10px; display: flex; flex-direction: column; flex-grow: 1; }
+
+        .movie-info h3 {
+            font-size: 14px; font-weight: 700; margin-bottom: 4px;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+
+        .movie-info .card-meta {
+            font-size: 11px; color: #aaa; margin-bottom: 4px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+
+        .movie-info .card-genre {
+            font-size: 11px; color: #777; margin-bottom: 10px;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+
+        .play-btn {
+            margin-top: auto; background-color: #E50914; color: white; padding: 8px 0;
+            border-radius: 6px; font-size: 13px; font-weight: bold; text-align: center;
+            display: flex; align-items: center; justify-content: center; gap: 5px;
+        }
+
+        /* COMPACT 9/1 PAGINATION */
+        .pagination-container { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 12px; 
+            margin: 25px 0 15px 0; 
+        }
+
+        .page-ctrl-btn {
+            background: #1a1a1a;
+            color: #fff;
+            border: 1px solid #333;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .page-ctrl-btn:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+            border-color: #222;
+        }
+
+        .page-indicator {
+            background: #121212;
+            border: 1px solid #E50914;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 7px 16px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(229, 9, 20, 0.25);
+        }
+
+        .page-indicator span {
+            color: #E50914;
+        }
+
+        /* SEO FOOTER */
         .seo-web-footer {
             margin: 30px 14px 10px 14px;
             background: #131313;
@@ -793,7 +1345,7 @@
         </div>
     </div>
 
-    <!-- MOVIE POSTER & TIMER OVERLAY WITH WORKING TELEGRAM BUTTON -->
+    <!-- MOVIE POSTER & TIMER OVERLAY -->
     <div class="ad-timer-overlay" id="adTimerOverlay">
         <div class="ad-timer-box">
             <button class="top-right-close-btn" onclick="cancelTimerOverlay()">✕</button>
@@ -843,7 +1395,6 @@
 
     <script>
         const WORKER_URL = "https://cold-resonance-fff9skcinebuzz-like.sunnisk807325.workers.dev"; 
-        const CACHE_NAME = 'skcinebuzz-posters-v1';
 
         let currentCategory = 'movie'; 
         let searchSubFilter = 'all';
@@ -870,27 +1421,21 @@
         function openTelegramLink(username = 'skcinebuzz') {
             const cleanUser = username.replace('@', '').trim();
             const httpsUrl = `https://t.me/${cleanUser}`;
-            
-            // Android Intent format specifically designed for WebViews: opens Telegram App without net::ERR_UNKNOWN_URL_SCHEME
             const intentUrl = `intent://resolve?domain=${cleanUser}#Intent;package=org.telegram.messenger;scheme=tg;end`;
 
-            // Detect if inside an Android App / WebView
             const ua = navigator.userAgent || '';
             const isAndroidApp = /wv|Android.*Version\/[0-9.]+|AppCreator24/i.test(ua);
 
             if (isAndroidApp) {
-                // In APK WebView, using hidden iframe or direct intent prevents crashing the view
                 try {
                     window.location.href = intentUrl;
                     setTimeout(() => {
-                        // If intent is blocked or app not installed, fallback safely
                         window.location.href = httpsUrl;
                     }, 1200);
                 } catch (e) {
                     window.location.href = httpsUrl;
                 }
             } else {
-                // In normal mobile/desktop browsers
                 const newWin = window.open(httpsUrl, '_blank');
                 if (!newWin || newWin.closed || typeof newWin.closed === 'undefined') {
                     window.location.href = httpsUrl;
@@ -913,34 +1458,17 @@
             }
         }
 
-        /* OFFLINE IMAGE CACHING */
-        async function loadCachedImage(imgElement, imageUrl) {
-            if (!imageUrl) return;
-
-            if ('caches' in window) {
-                try {
-                    const cache = await caches.open(CACHE_NAME);
-                    const cachedResponse = await cache.match(imageUrl);
-
-                    if (cachedResponse) {
-                        const blob = await cachedResponse.blob();
-                        imgElement.src = URL.createObjectURL(blob);
-                        return;
-                    } else {
-                        imgElement.src = imageUrl;
-                        fetch(imageUrl, { mode: 'no-cors' })
-                            .then(networkResponse => {
-                                if (networkResponse) cache.put(imageUrl, networkResponse);
-                            })
-                            .catch(() => {});
-                        return;
-                    }
-                } catch (err) {
-                    imgElement.src = imageUrl;
-                }
-            } else {
-                imgElement.src = imageUrl;
-            }
+        /* SAFE IMAGE SETTER (SOLVES BROKEN IMAGE ISSUE IN APK WEBVIEW) */
+        function safeSetImage(imgElement, srcUrl) {
+            if (!srcUrl) return;
+            imgElement.crossOrigin = "anonymous";
+            imgElement.referrerPolicy = "no-referrer";
+            imgElement.src = srcUrl;
+            imgElement.onerror = function() {
+                // If specific format fails, load fallback placeholder
+                this.onerror = null;
+                this.src = "https://via.placeholder.com/300x420/1a1a1a/ffffff?text=Poster";
+            };
         }
 
         /* SEARCH INPUT */
@@ -984,13 +1512,18 @@
                     filterMovies();
                 };
 
-                item.innerHTML = `
-                    <img src="${m.image}" alt="poster">
-                    <div class="suggest-info">
-                        <h5>${m.name}</h5>
-                        <span>${m.year || ''} • ${(m.category || 'Movie').toUpperCase()}</span>
-                    </div>
+                const img = document.createElement('img');
+                safeSetImage(img, m.image);
+
+                const info = document.createElement('div');
+                info.className = 'suggest-info';
+                info.innerHTML = `
+                    <h5>${m.name}</h5>
+                    <span>${m.year || ''} • ${(m.category || 'Movie').toUpperCase()}</span>
                 `;
+
+                item.appendChild(img);
+                item.appendChild(info);
                 suggestBox.appendChild(item);
             });
 
@@ -1186,8 +1719,7 @@
 
                 const imgEl = document.createElement('img');
                 imgEl.alt = movie.name;
-                imgEl.loading = "lazy";
-                loadCachedImage(imgEl, movie.image);
+                safeSetImage(imgEl, movie.image);
 
                 const infoDiv = document.createElement('div');
                 infoDiv.className = 'movie-info';
@@ -1257,8 +1789,7 @@
 
                 const imgEl = document.createElement('img');
                 imgEl.alt = movie.name;
-                imgEl.loading = "lazy";
-                loadCachedImage(imgEl, movie.image);
+                safeSetImage(imgEl, movie.image);
 
                 trendCard.innerHTML = `<div class="trend-badge">#${index + 1}</div>`;
                 trendCard.appendChild(imgEl);
@@ -1324,7 +1855,7 @@
             const continueBtn = document.getElementById('continueToVideoBtn');
             const posterImg = document.getElementById('adMoviePosterImg');
 
-            loadCachedImage(posterImg, posterUrl || "https://via.placeholder.com/400x180/1a1a1a/ffffff?text=Sk+CineBuzz");
+            safeSetImage(posterImg, posterUrl || "https://via.placeholder.com/400x180/1a1a1a/ffffff?text=Sk+CineBuzz");
 
             overlay.style.display = 'flex';
             overlay.scrollTop = 0; 
@@ -1398,8 +1929,7 @@
                     
                     const img = document.createElement('img');
                     img.alt = ep.title;
-                    img.loading = "lazy";
-                    loadCachedImage(img, epImage);
+                    safeSetImage(img, epImage);
 
                     epCard.appendChild(img);
                     epCard.innerHTML += `
@@ -1526,7 +2056,7 @@
             document.getElementById('ytVoiceOverlay').style.display = 'none';
         }
 
-        /* HARDWARE BACK BUTTON LOGIC */
+        /* BACK BUTTON LOGIC */
         window.addEventListener('popstate', function () {
             const timerOverlay = document.getElementById('adTimerOverlay');
             const playerOverlay = document.getElementById('videoPlayerOverlay');
