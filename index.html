@@ -358,7 +358,7 @@
             display: flex; align-items: center; justify-content: center; gap: 5px;
         }
 
-        /* COMPACT PAGINATION (e.g. « Prev [ 1 / 9 ] Next ») */
+        /* COMPACT PAGINATION (9/1 STYLE) */
         .pagination-container { 
             display: flex; 
             justify-content: center; 
@@ -739,7 +739,7 @@
 
         <div class="movie-grid" id="movieContainer"></div>
 
-        <!-- COMPACT 1/9 PAGINATION BAR -->
+        <!-- COMPACT 1 / 9 PAGINATION -->
         <div class="pagination-container" id="paginationContainer"></div>
 
         <!-- SEO WEB-ONLY FOOTER (AUTO HIDES IN APK) -->
@@ -793,7 +793,7 @@
         </div>
     </div>
 
-    <!-- MOVIE POSTER & TIMER OVERLAY WITH TELEGRAM BUTTON -->
+    <!-- MOVIE POSTER & TIMER OVERLAY WITH WORKING TELEGRAM BUTTON -->
     <div class="ad-timer-overlay" id="adTimerOverlay">
         <div class="ad-timer-box">
             <button class="top-right-close-btn" onclick="cancelTimerOverlay()">✕</button>
@@ -805,6 +805,7 @@
 
             <button class="continue-btn-red" id="continueToVideoBtn" onclick="closeTimerAndPlay()">▶ CONTINUE TO VIDEO</button>
 
+            <!-- TELEGRAM JOIN PROMO BOX -->
             <div class="tg-promo-box">
                 <p>🔔 Join Telegram for fastest updates & requests!</p>
                 <button class="tg-join-btn" onclick="openTelegramLink('skcinebuzz')">
@@ -865,6 +866,38 @@
 
         let recognitionInstance = null;
 
+        /* FULL CRASH FIX FOR TELEGRAM LINK IN APK / WEBVIEW */
+        function openTelegramLink(username = 'skcinebuzz') {
+            const cleanUser = username.replace('@', '').trim();
+            const httpsUrl = `https://t.me/${cleanUser}`;
+            
+            // Android Intent format specifically designed for WebViews: opens Telegram App without net::ERR_UNKNOWN_URL_SCHEME
+            const intentUrl = `intent://resolve?domain=${cleanUser}#Intent;package=org.telegram.messenger;scheme=tg;end`;
+
+            // Detect if inside an Android App / WebView
+            const ua = navigator.userAgent || '';
+            const isAndroidApp = /wv|Android.*Version\/[0-9.]+|AppCreator24/i.test(ua);
+
+            if (isAndroidApp) {
+                // In APK WebView, using hidden iframe or direct intent prevents crashing the view
+                try {
+                    window.location.href = intentUrl;
+                    setTimeout(() => {
+                        // If intent is blocked or app not installed, fallback safely
+                        window.location.href = httpsUrl;
+                    }, 1200);
+                } catch (e) {
+                    window.location.href = httpsUrl;
+                }
+            } else {
+                // In normal mobile/desktop browsers
+                const newWin = window.open(httpsUrl, '_blank');
+                if (!newWin || newWin.closed || typeof newWin.closed === 'undefined') {
+                    window.location.href = httpsUrl;
+                }
+            }
+        }
+
         /* DETECT APK TO HIDE DOWNLOAD ICON & SEO FOOTER */
         function checkAndHideForApk() {
             const ua = navigator.userAgent || navigator.vendor || window.opera;
@@ -877,20 +910,6 @@
                 if (menuItem) menuItem.style.display = 'none';
                 const seoFooter = document.getElementById('seoWebFooter');
                 if (seoFooter) seoFooter.style.display = 'none';
-            }
-        }
-
-        /* SAFE TELEGRAM OPEN */
-        function openTelegramLink(username = 'skcinebuzz') {
-            const cleanUser = username.replace('@', '').trim();
-            const webUrl = `https://t.me/${cleanUser}`;
-            try {
-                const newWin = window.open(webUrl, '_blank');
-                if (!newWin || newWin.closed || typeof newWin.closed === 'undefined') {
-                    window.location.href = webUrl;
-                }
-            } catch (e) {
-                window.location.href = webUrl;
             }
         }
 
@@ -1139,7 +1158,7 @@
             }
         }
 
-        /* DISPLAY CARDS WITH COMPACT « Prev [ 1 / 9 ] Next » PAGINATION */
+        /* COMPACT PAGINATION (9/1) */
         function displayMovies(movies) {
             container.innerHTML = ""; 
             paginationContainer.innerHTML = "";
@@ -1187,7 +1206,6 @@
                 container.appendChild(card);
             });
 
-            /* COMPACT 1 / 9 BAR BUILDER */
             if (totalPages > 1) {
                 const prevBtn = document.createElement('button');
                 prevBtn.className = 'page-ctrl-btn';
@@ -1508,7 +1526,7 @@
             document.getElementById('ytVoiceOverlay').style.display = 'none';
         }
 
-        /* BACK BUTTON LOGIC */
+        /* HARDWARE BACK BUTTON LOGIC */
         window.addEventListener('popstate', function () {
             const timerOverlay = document.getElementById('adTimerOverlay');
             const playerOverlay = document.getElementById('videoPlayerOverlay');
