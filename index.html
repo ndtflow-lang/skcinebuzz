@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -435,7 +436,7 @@
         }
 
         /* ================================================================
-           PURE BLACK THEATER PLAYER WITH 20PX SIDES & PINCH-ZOOM
+           PURE BLACK THEATER PLAYER (ISOLATED OVERSCROLL FIX & 20PX PADDING)
            ================================================================ */
         .pure-black-player {
             position: fixed;
@@ -447,18 +448,18 @@
             justify-content: center;
             align-items: center;
             user-select: none;
-            touch-action: none;
+            touch-action: none !important;
+            overscroll-behavior: none !important;
             overflow: hidden;
         }
 
-        /* Video Stage: 20px left-right padding, no shorts stretch */
         .video-stage-container {
             width: 100%;
             height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 0 20px; /* 20px side margin as requested */
+            padding: 0 20px;
             overflow: hidden;
             position: relative;
         }
@@ -466,7 +467,7 @@
         #customVideoEl {
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain; /* Cinema ratio, no 9:16 stretch */
+            object-fit: contain;
             background: #000;
             transform-origin: center center;
             transition: transform 0.05s linear;
@@ -584,9 +585,7 @@
             color: #ddd;
         }
 
-        /* ================================================================
-           AUTHENTIC APP GESTURE HUD (NO EMOJIS, REAL PROGRESS BARS)
-           ================================================================ */
+        /* REAL APP GESTURE HUD */
         .real-gesture-hud {
             position: absolute;
             top: 50%; left: 50%;
@@ -988,7 +987,7 @@
             <button class="cat-btn" id="btn-kids" onclick="changeCategory('kids', true)">Kids</button>
         </div>
 
-        <!-- MAIN HOME FEED -->
+        <!-- MAIN HOME FEED (NORMAL REFRESH & SCROLL ACTIVE) -->
         <div id="mainFeedWrapper">
             <!-- TRENDING -->
             <div id="trendingSection">
@@ -1060,7 +1059,7 @@
         </div>
     </div>
 
-    <!-- PURE BLACK FULL-SCREEN PLAYER (20PX SIDE PADDING + PINCH ZOOM) -->
+    <!-- PURE BLACK FULL-SCREEN PLAYER (20PX SIDE PADDING + PINCH ZOOM + ISOLATED NO-REFRESH) -->
     <div class="pure-black-player" id="pureBlackPlayer">
         <div id="brightnessLayer"></div>
 
@@ -1070,9 +1069,7 @@
 
         <!-- REAL APP GESTURE HUD (NO EMOJIS, REAL PROGRESS BAR) -->
         <div class="real-gesture-hud" id="gestureHud">
-            <div class="hud-icon-wrap" id="gestureHudIcon">
-                <!-- SVG injected dynamically -->
-            </div>
+            <div class="hud-icon-wrap" id="gestureHudIcon"></div>
             <div class="hud-title-text" id="gestureHudText">Volume: 100%</div>
             <div class="hud-meter-track" id="gestureHudTrack">
                 <div class="hud-meter-fill" id="gestureHudFill"></div>
@@ -1510,7 +1507,7 @@
         }
 
         /* ================================================================
-           PURE BLACK THEATER PLAYER (20PX SIDES + PINCH ZOOM + REAL HUD)
+           PURE BLACK THEATER PLAYER (FULLSCREEN, 20PX SIDES, NO-REFRESH)
            ================================================================ */
         let audioCtx = null;
         let gainNode = null;
@@ -1534,7 +1531,6 @@
 
         const playerEl = document.getElementById('pureBlackPlayer');
         const videoEl = document.getElementById('customVideoEl');
-        const videoStage = document.getElementById('videoStage');
         const controlsLayer = document.getElementById('playerControlsLayer');
         const gestureHud = document.getElementById('gestureHud');
         const gestureHudText = document.getElementById('gestureHudText');
@@ -1577,6 +1573,14 @@
             playerEl.style.display = 'flex';
             document.getElementById('main-body').classList.add('body-locked');
 
+            // Hide system status bar & bottom line via Fullscreen
+            const elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen().catch(() => {});
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
+            }
+
             resetZoomState();
 
             currentVolumeFactor = 1.0;
@@ -1599,6 +1603,12 @@
         }
 
         function closePureBlackPlayer() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen().catch(() => {});
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            }
+
             videoEl.pause();
             videoEl.src = '';
             resetZoomState();
@@ -1688,9 +1698,7 @@
             showControlsTemporarily();
         }
 
-        /* ================================================================
-           TOUCH HANDLING: PINCH-ZOOM + SWIPE GESTURES (REAL APP HUD)
-           ================================================================ */
+        /* TOUCH GESTURES (BLOCKED REFRESH ONLY IN PLAYER) */
         let touchStartX = 0;
         let touchStartY = 0;
         let isSwiping = false;
@@ -1705,7 +1713,6 @@
 
         playerEl.addEventListener('touchstart', (e) => {
             if (e.touches.length === 2) {
-                // PINCH ZOOM START
                 initialDistance = getTouchDistance(e.touches[0], e.touches[1]);
                 baseZoomScale = currentZoomScale;
                 isSwiping = false;
@@ -1715,7 +1722,6 @@
             }
 
             if (e.touches.length === 1) {
-                // DOUBLE TAP TO RESET ZOOM
                 const now = Date.now();
                 if (now - lastTapTime < 300) {
                     resetZoomState();
@@ -1738,7 +1744,10 @@
         }, { passive: true });
 
         playerEl.addEventListener('touchmove', (e) => {
-            // 1. PINCH ZOOM LOGIC (TWO FINGERS)
+            // STOP WEBVIEW PULL-TO-REFRESH ONLY IN THIS PLAYER SCREEN
+            if (e.cancelable) e.preventDefault();
+
+            // 1. PINCH ZOOM
             if (e.touches.length === 2) {
                 const newDist = getTouchDistance(e.touches[0], e.touches[1]);
                 if (initialDistance > 0) {
@@ -1750,7 +1759,7 @@
                 return;
             }
 
-            // 2. PANNING (WHEN ZOOMED IN)
+            // 2. PANNING
             if (e.touches.length === 1 && currentZoomScale > 1.05) {
                 const touch = e.touches[0];
                 panOffsetX = touch.clientX - panStartX;
@@ -1759,7 +1768,7 @@
                 return;
             }
 
-            // 3. ONE FINGER SWIPE GESTURES (NORMAL ZOOM)
+            // 3. ONE FINGER SWIPE GESTURES
             if (e.touches.length === 1 && currentZoomScale <= 1.05) {
                 const touch = e.touches[0];
                 const deltaX = touch.clientX - touchStartX;
@@ -1809,7 +1818,7 @@
                     showRealHud('seek', `${sign}${Math.round(seekOffset)}s (${formatPlayerTime(targetTime)})`, (targetTime / videoEl.duration) * 100, false);
                 }
             }
-        }, { passive: true });
+        }, { passive: false });
 
         playerEl.addEventListener('touchend', () => {
             if (swipeMode === 'volume') currentVolumeFactor = gainNode.gain.value;
@@ -1820,7 +1829,7 @@
             initialDistance = 0;
         });
 
-        /* REAL APP HUD RENDERER (NO EMOJIS, HIGH TECH SVG ICONS & METER) */
+        /* REAL APP HUD RENDERER */
         function showRealHud(type, text, fillPercent, showBar = true) {
             let svgIcon = '';
             if (type === 'volume') {
