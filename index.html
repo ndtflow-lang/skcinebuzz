@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="ctMnsEnHZDtk7bz7pCfT4kJ62r_OU1xM-Lj8ANOgbig" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
     <title>Sk CineBuzz - Watch & Download Latest HD Movies & Web Series</title>
     <meta name="description" content="Download latest HD movies, Bollywood, Hollywood, South Hindi Dubbed movies, and web series for free on Sk CineBuzz.">
@@ -14,6 +13,21 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/Gf1Rs1MV/1785838430902.png">
     <link rel="icon" type="image/png" sizes="192x192" href="https://i.ibb.co/Gf1Rs1MV/1785838430902.png">
     <link rel="apple-touch-icon" href="https://i.ibb.co/Gf1Rs1MV/1785838430902.png">
+
+    <!-- Schema.org Website Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Sk CineBuzz",
+      "url": "https://sunnisk807325-ship-it.github.io/skcinebuzz/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://sunnisk807325-ship-it.github.io/skcinebuzz/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
     
     <style>
         * {
@@ -216,7 +230,7 @@
         }
 
         .suggest-info h5 { font-size: 13px; color: #fff; margin-bottom: 2px; }
-        .suggest-info span { font-size: 11px; color: #888; }
+        .suggest-info span { font-size: 11px; color: #aaa; }
 
         .search-filters-row {
             display: none;
@@ -230,7 +244,7 @@
         .search-filter-chip {
             background: #1c1c1c;
             border: 1px solid #2e2e2e;
-            color: #aaa;
+            color: #bbb;
             padding: 5px 12px;
             border-radius: 16px;
             font-size: 11px;
@@ -272,7 +286,7 @@
         }
 
         .section-title { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
-        .see-all { color: #aaa; font-size: 12px; text-decoration: none; }
+        .see-all { color: #bbb; font-size: 12px; text-decoration: none; }
 
         /* TRENDING */
         .trending-carousel-container {
@@ -304,12 +318,12 @@
             background: #1c1c1c; display: block;
         }
 
-        .trend-card h4 {
+        .trend-card h3 {
             font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden;
             text-overflow: ellipsis; margin-bottom: 4px;
         }
 
-        .meta-info { display: flex; align-items: center; gap: 10px; font-size: 11px; color: #aaa; }
+        .meta-info { display: flex; align-items: center; gap: 10px; font-size: 11px; color: #bbb; }
         .like-display { color: #ff3366; font-size: 12px; display: inline-flex; align-items: center; gap: 3px; }
 
         /* MOVIE GRID */
@@ -336,12 +350,12 @@
         }
 
         .movie-info .card-meta {
-            font-size: 11px; color: #aaa; margin-bottom: 4px;
+            font-size: 11px; color: #bbb; margin-bottom: 4px;
             display: flex; align-items: center; justify-content: space-between;
         }
 
         .movie-info .card-genre {
-            font-size: 11px; color: #777; margin-bottom: 10px;
+            font-size: 11px; color: #aaa; margin-bottom: 10px;
             white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
         }
 
@@ -419,13 +433,15 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: #888;
+            color: #aaa;
             font-size: 11px;
             font-weight: 600;
             gap: 4px;
             cursor: pointer;
             width: 48%;
             height: 100%;
+            background: transparent;
+            border: none;
         }
 
         .bottom-nav-item svg { width: 22px; height: 22px; fill: currentColor; }
@@ -436,9 +452,7 @@
             padding: 0;
         }
 
-        /* ================================================================
-           PURE BLACK THEATER PLAYER (ISOLATED OVERSCROLL FIX & 20PX PADDING)
-           ================================================================ */
+        /* PURE BLACK THEATER PLAYER */
         .pure-black-player {
             position: fixed;
             top: 0; left: 0;
@@ -547,6 +561,7 @@
             color: #fff;
             cursor: pointer;
             box-shadow: 0 0 16px rgba(229, 9, 20, 0.5);
+            border: none;
         }
 
         .center-play-circle svg { width: 28px; height: 28px; fill: #ffffff; }
@@ -586,7 +601,6 @@
             color: #ddd;
         }
 
-        /* REAL APP GESTURE HUD */
         .real-gesture-hud {
             position: absolute;
             top: 50%; left: 50%;
@@ -708,7 +722,7 @@
             padding: 16px;
             font-size: 12px;
             line-height: 1.6;
-            color: #999;
+            color: #aaa;
         }
 
         .seo-breadcrumb {
@@ -747,7 +761,7 @@
 
         .seo-keywords-list {
             text-align: center;
-            color: #aaa;
+            color: #bbb;
             font-size: 11px;
             font-weight: 600;
             line-height: 1.8;
@@ -759,7 +773,7 @@
             border-top: 1px solid #222;
             padding-top: 10px;
             font-size: 12px;
-            color: #777;
+            color: #888;
         }
 
         .seo-brand-powered span { color: #E50914; font-weight: 800; }
@@ -782,7 +796,7 @@
             border-bottom: 1px solid #2a2a2a; padding-bottom: 15px; margin-bottom: 10px;
         }
 
-        .menu-header h3 { font-size: 18px; color: #E50914; }
+        .menu-header h2 { font-size: 18px; color: #E50914; }
         .menu-close-btn { background: none; border: none; color: #fff; font-size: 20px; cursor: pointer; }
 
         .menu-item {
@@ -891,6 +905,7 @@
             width: 90px; height: 90px; background: #E50914; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7); animation: ytPulse 1.5s infinite; cursor: pointer;
+            border: none;
         }
 
         @keyframes ytPulse {
@@ -907,17 +922,18 @@
 </head>
 <body id="main-body">
 
-    <!-- HIDDEN FILE SELECTOR FOR SMART NAME MATCHING -->
+    <!-- HIDDEN FILE SELECTOR -->
     <input type="file" id="movieFileInput" accept="video/*,.mkv,.mp4,.avi,.webm" style="display:none;" onchange="handleFileSelection(event)">
 
-    <div id="appMainContent">
+    <!-- ACCESSIBILITY: MAIN LANDMARK -->
+    <main id="appMainContent">
         <!-- HEADER -->
-        <div class="header-bar">
-            <button class="icon-btn" onclick="openMenu()">
+        <header class="header-bar">
+            <button class="icon-btn" onclick="openMenu()" aria-label="Open Navigation Menu">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </button>
             <div class="brand-logo">
-                <svg viewBox="0 0 100 100">
+                <svg viewBox="0 0 100 100" role="img" aria-label="Sk CineBuzz Logo">
                     <g fill="#E50914">
                         <circle cx="50" cy="46" r="38"/>
                         <path d="M 12 70 Q 20 82 30 84 L 38 72 Q 28 72 22 62 Z"/>
@@ -937,30 +953,29 @@
             </div>
             
             <div class="header-right-actions">
-                <a href="https://www.appcreator24.com/app4130809-xb3zpc" target="_blank" class="header-download-btn" id="headerAppBtn" title="Download Android App">
+                <a href="https://www.appcreator24.com/app4130809-xb3zpc" target="_blank" class="header-download-btn" id="headerAppBtn" title="Download Android App" aria-label="Download Android APK">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                         <polyline points="7 10 12 15 17 10"></polyline>
                         <line x1="12" y1="15" x2="12" y2="3"></line>
                     </svg>
                 </a>
-                <!-- ORIGINAL TELEGRAM CHANNEL 1 (allchannel97) -->
-                <button class="icon-btn" onclick="openTelegramLink('allchannel97')" title="Join Telegram Channel">
+                <button class="icon-btn" onclick="openTelegramLink('allchannel97')" title="Join Telegram Channel" aria-label="Join Official Telegram Channel">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
                 </button>
             </div>
-        </div>
+        </header>
 
         <!-- ADVANCED SEARCH -->
-        <div class="search-container">
+        <section class="search-container" aria-label="Search Movies">
             <div class="search-wrapper">
                 <span class="search-icon">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 </span>
-                <input type="text" id="searchBox" class="search-input" placeholder="Search Movie, Web Series, Genre, Year..." oninput="handleSearchInput()" autocomplete="off">
-                <button id="clearSearchBtn" class="search-action-btn" onclick="clearSearch()" style="display:none;">✕</button>
+                <input type="text" id="searchBox" class="search-input" placeholder="Search Movie, Web Series, Genre, Year..." oninput="handleSearchInput()" autocomplete="off" aria-label="Search content">
+                <button id="clearSearchBtn" class="search-action-btn" onclick="clearSearch()" style="display:none;" aria-label="Clear Search text">✕</button>
                 
-                <button id="micBtn" class="search-action-btn" onclick="startVoiceSearch()" title="Speak to Search">
+                <button id="micBtn" class="search-action-btn" onclick="startVoiceSearch()" title="Speak to Search" aria-label="Search with voice">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e0e0e0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
                         <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
@@ -972,62 +987,64 @@
             <div class="search-suggest-box" id="searchSuggestBox"></div>
 
             <div class="search-filters-row" id="searchFiltersRow">
-                <button class="search-filter-chip active" onclick="setSearchSubFilter('all', this)">All Results</button>
-                <button class="search-filter-chip" onclick="setSearchSubFilter('movie', this)">Movies</button>
-                <button class="search-filter-chip" onclick="setSearchSubFilter('series', this)">Series</button>
-                <button class="search-filter-chip" onclick="setSearchSubFilter('anime', this)">Anime</button>
-                <button class="search-filter-chip" onclick="setSearchSubFilter('latest', this)">Latest Year</button>
+                <button class="search-filter-chip active" onclick="setSearchSubFilter('all', this)" aria-label="Filter all content">All Results</button>
+                <button class="search-filter-chip" onclick="setSearchSubFilter('movie', this)" aria-label="Filter movies">Movies</button>
+                <button class="search-filter-chip" onclick="setSearchSubFilter('series', this)" aria-label="Filter web series">Series</button>
+                <button class="search-filter-chip" onclick="setSearchSubFilter('anime', this)" aria-label="Filter anime">Anime</button>
+                <button class="search-filter-chip" onclick="setSearchSubFilter('latest', this)" aria-label="Filter latest releases">Latest Year</button>
             </div>
-        </div>
+        </section>
 
         <!-- CATEGORIES BAR -->
-        <div class="category-container" id="mainCategoriesBar">
-            <button class="cat-btn active" id="btn-movie" onclick="changeCategory('movie', true)">Movie</button>
-            <button class="cat-btn" id="btn-series" onclick="changeCategory('series', true)">Web Series</button>
-            <button class="cat-btn" id="btn-anime" onclick="changeCategory('anime', true)">Anime</button>
-            <button class="cat-btn" id="btn-kids" onclick="changeCategory('kids', true)">Kids</button>
-        </div>
+        <nav class="category-container" id="mainCategoriesBar" aria-label="Content categories">
+            <button class="cat-btn active" id="btn-movie" onclick="changeCategory('movie', true)" aria-label="Show movies category">Movie</button>
+            <button class="cat-btn" id="btn-series" onclick="changeCategory('series', true)" aria-label="Show web series category">Web Series</button>
+            <button class="cat-btn" id="btn-anime" onclick="changeCategory('anime', true)" aria-label="Show anime category">Anime</button>
+            <button class="cat-btn" id="btn-kids" onclick="changeCategory('kids', true)" aria-label="Show kids category">Kids</button>
+        </nav>
 
-        <!-- MAIN HOME FEED (NORMAL REFRESH & SCROLL ACTIVE) -->
+        <!-- MAIN HOME FEED -->
         <div id="mainFeedWrapper">
             <!-- TRENDING -->
-            <div id="trendingSection">
+            <section id="trendingSection" aria-label="Trending content section">
                 <div class="section-header">
-                    <div class="section-title">
+                    <h2 class="section-title">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="#E50914"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.61 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg>
                         Trending Content
-                    </div>
-                    <a href="#" class="see-all">See All &gt;</a>
+                    </h2>
+                    <a href="#" class="see-all" aria-label="See all trending content">See All &gt;</a>
                 </div>
                 <div class="trending-carousel-container" id="trendingCarouselContainer">
                     <div class="trending-slider" id="trendingContainer"></div>
                 </div>
-            </div>
+            </section>
 
             <!-- NEW RELEASES -->
-            <div class="section-header" id="newReleaseHeader">
-                <div class="section-title" id="mainSectionTitle">New Releases</div>
-                <a href="#" class="see-all" id="seeAllBtn">See All &gt;</a>
-            </div>
+            <section aria-label="New releases section">
+                <div class="section-header" id="newReleaseHeader">
+                    <h2 class="section-title" id="mainSectionTitle">New Releases</h2>
+                    <a href="#" class="see-all" id="seeAllBtn" aria-label="See all releases">See All &gt;</a>
+                </div>
 
-            <div class="movie-grid" id="movieContainer"></div>
-            <div class="pagination-container" id="paginationContainer"></div>
+                <div class="movie-grid" id="movieContainer"></div>
+                <nav class="pagination-container" id="paginationContainer" aria-label="Pagination Navigation"></nav>
+            </section>
         </div>
 
-        <!-- DOWNLOADS SCREEN (BIG POSTERS GRID - APK ONLY) -->
-        <div id="downloadsSection">
+        <!-- DOWNLOADS SCREEN (APK ONLY) -->
+        <section id="downloadsSection" aria-label="Downloaded offline content">
             <div class="section-header" style="padding: 10px 16px 12px 16px;">
-                <div class="section-title">
+                <h2 class="section-title">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="#00ff88"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                     My Downloads
-                </div>
-                <button class="in-app-action-btn" onclick="clearAllDownloads()">Clear All</button>
+                </h2>
+                <button class="in-app-action-btn" onclick="clearAllDownloads()" aria-label="Clear all downloaded items">Clear All</button>
             </div>
             <div class="movie-grid" id="downloadsGridContainer"></div>
-        </div>
+        </section>
 
         <!-- SEO WEB-ONLY FOOTER (HIDDEN IN APK) -->
-        <div class="seo-web-footer" id="seoWebFooter">
+        <footer class="seo-web-footer" id="seoWebFooter">
             <div class="seo-breadcrumb">Home » Hollywood & Bollywood Hindi Movies » Dual Audio HD Movies Free Download</div>
             
             <div class="seo-tags-box">
@@ -1035,7 +1052,7 @@
                 <span>SK CineBuzz, Sk CineBuzz Movie Download, Latest Movies HD ESub Sk CineBuzz, Hindi Dubbed Movies 480p 720p 1080p, SK CineBuzz Web Series Free, Bollywood Hollywood South Movies, HEVC 300MB Dual Audio Movie Download Sk CineBuzz, SkCinebuzz Online Stream.</span>
             </div>
 
-            <div class="seo-how-to-header">मूवी डाउनलोड कैसे करें!</div>
+            <h3 class="seo-how-to-header">मूवी डाउनलोड कैसे करें!</h3>
             <div class="seo-how-to-sub">How To Download Movies on SK CineBuzz</div>
 
             <div class="seo-keywords-list">
@@ -1045,31 +1062,30 @@
             <div class="seo-brand-powered">
                 Powered By: <span>SK CineBuzz</span>
             </div>
-        </div>
-    </div>
+        </footer>
+    </main>
 
     <!-- FLOATING BOTTOM NAVIGATION BAR (ACTIVE ONLY IN APK) -->
-    <div class="bottom-nav-bar" id="bottomNavBar">
-        <div class="bottom-nav-item active" id="navHomeBtn" onclick="switchMainTab('home')">
+    <nav class="bottom-nav-bar" id="bottomNavBar" aria-label="Bottom Navigation">
+        <button class="bottom-nav-item active" id="navHomeBtn" onclick="switchMainTab('home')" aria-label="Go to Home Screen">
             <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
             <span>Home</span>
-        </div>
-        <div class="bottom-nav-item" id="navDownloadsBtn" onclick="switchMainTab('downloads')">
+        </button>
+        <button class="bottom-nav-item" id="navDownloadsBtn" onclick="switchMainTab('downloads')" aria-label="Go to Downloads Screen">
             <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
             <span>Downloads</span>
-        </div>
-    </div>
+        </button>
+    </nav>
 
-    <!-- PURE BLACK FULL-SCREEN PLAYER (20PX SIDE PADDING + PINCH ZOOM + ISOLATED NO-REFRESH) -->
-    <div class="pure-black-player" id="pureBlackPlayer">
+    <!-- PURE BLACK FULL-SCREEN PLAYER -->
+    <div class="pure-black-player" id="pureBlackPlayer" role="dialog" aria-label="Video Player Dialog">
         <div id="brightnessLayer"></div>
 
         <div class="video-stage-container" id="videoStage">
             <video id="customVideoEl" playsinline></video>
         </div>
 
-        <!-- REAL APP GESTURE HUD (NO EMOJIS, REAL PROGRESS BAR) -->
-        <div class="real-gesture-hud" id="gestureHud">
+        <div class="real-gesture-hud" id="gestureHud" aria-live="polite">
             <div class="hud-icon-wrap" id="gestureHudIcon"></div>
             <div class="hud-title-text" id="gestureHudText">Volume: 100%</div>
             <div class="hud-meter-track" id="gestureHudTrack">
@@ -1081,25 +1097,25 @@
             <div class="top-player-bar">
                 <div class="top-player-title" id="playerMovieTitle">Movie Name</div>
                 <div class="top-player-right">
-                    <button class="player-pill-btn" id="speedToggleBtn" onclick="togglePlaybackSpeed(event)">1.0x</button>
-                    <button class="player-pill-btn" id="rotateLockBtn" onclick="toggleAutoRotateLock(event)">
+                    <button class="player-pill-btn" id="speedToggleBtn" onclick="togglePlaybackSpeed(event)" aria-label="Toggle Playback Speed">1.0x</button>
+                    <button class="player-pill-btn" id="rotateLockBtn" onclick="toggleAutoRotateLock(event)" aria-label="Toggle Screen Rotation">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>
                         Rotate
                     </button>
-                    <button class="player-pill-btn" style="background:#E50914; border-color:#E50914;" onclick="closePureBlackPlayer()">✕ Close</button>
+                    <button class="player-pill-btn" style="background:#E50914; border-color:#E50914;" onclick="closePureBlackPlayer()" aria-label="Close Video Player">✕ Close</button>
                 </div>
             </div>
 
             <div class="center-player-bar">
-                <div class="center-play-circle" id="centerPlayBtn" onclick="toggleVideoPlayback(event)">
+                <button class="center-play-circle" id="centerPlayBtn" onclick="toggleVideoPlayback(event)" aria-label="Play or Pause Video">
                     <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                </div>
+                </button>
             </div>
 
             <div class="bottom-player-bar">
                 <div class="progress-bar-container">
                     <span class="time-display" id="currentTimeLabel">00:00</span>
-                    <input type="range" id="videoProgressBar" class="video-slider" min="0" max="100" value="0" oninput="seekVideoProgress(this.value)">
+                    <input type="range" id="videoProgressBar" class="video-slider" min="0" max="100" value="0" oninput="seekVideoProgress(this.value)" aria-label="Video Seek Bar">
                     <span class="time-display" id="durationTimeLabel">00:00</span>
                 </div>
             </div>
@@ -1107,76 +1123,73 @@
     </div>
 
     <!-- IN-APP DOWNLOAD ENGINE OVERLAY -->
-    <div class="in-app-webview-overlay" id="downloadWebViewOverlay">
+    <div class="in-app-webview-overlay" id="downloadWebViewOverlay" role="dialog" aria-label="Download Engine Overlay">
         <div class="in-app-webview-header">
             <div class="in-app-webview-title" id="inAppWebTitle">⚡ Fast Download Engine</div>
             <div class="webview-header-actions">
-                <button class="in-app-action-btn" onclick="openCurrentInBrowser()">
+                <button class="in-app-action-btn" onclick="openCurrentInBrowser()" aria-label="Open in external browser">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                     Browser
                 </button>
-                <button class="in-app-action-btn" style="background:#E50914; border-color:#E50914;" onclick="closeInAppDownloadWebView()">✕ Done</button>
+                <button class="in-app-action-btn" style="background:#E50914; border-color:#E50914;" onclick="closeInAppDownloadWebView()" aria-label="Done downloading">✕ Done</button>
             </div>
         </div>
-        <iframe id="inAppWebFrame" allow="autoplay; fullscreen; download"></iframe>
+        <iframe id="inAppWebFrame" allow="autoplay; fullscreen; download" title="Download Engine Frame"></iframe>
     </div>
 
     <!-- VOICE SEARCH OVERLAY -->
-    <div class="yt-voice-overlay" id="ytVoiceOverlay">
-        <button class="yt-voice-close" onclick="closeVoiceSearch()">✕</button>
+    <div class="yt-voice-overlay" id="ytVoiceOverlay" role="dialog" aria-label="Voice Search Listening">
+        <button class="yt-voice-close" onclick="closeVoiceSearch()" aria-label="Close voice search">✕</button>
         <div class="yt-voice-title" id="ytVoiceStatus">Listening... Speak now</div>
         <div class="yt-voice-mic-container">
-            <div class="yt-mic-circle" onclick="restartVoiceSearch()">
+            <button class="yt-mic-circle" onclick="restartVoiceSearch()" aria-label="Restart listening microphone">
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
                     <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
                     <line x1="12" y1="19" x2="12" y2="22"></line>
                 </svg>
-            </div>
+            </button>
         </div>
         <p style="color:#aaa; font-size:13px;">Speak clearly and slowly</p>
     </div>
 
     <!-- SIDE MENU -->
-    <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()">
+    <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()" role="dialog" aria-label="Side Navigation Drawer">
         <div class="menu-box" onclick="event.stopPropagation()">
             <div class="menu-header">
-                <h3>Sk CineBuzz</h3>
-                <button class="menu-close-btn" onclick="closeMenu()">✕</button>
+                <h2>Sk CineBuzz</h2>
+                <button class="menu-close-btn" onclick="closeMenu()" aria-label="Close Menu">✕</button>
             </div>
-            <a href="https://www.appcreator24.com/app4130809-xb3zpc" target="_blank" class="menu-item app-download-item" id="menuAppItem">
+            <a href="https://www.appcreator24.com/app4130809-xb3zpc" target="_blank" class="menu-item app-download-item" id="menuAppItem" aria-label="Download Android App">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                 Download App (APK)
             </a>
-            <!-- ORIGINAL TELEGRAM CHANNEL 2 (skcinebuzz) -->
-            <div class="menu-item" onclick="closeMenu(); openTelegramLink('skcinebuzz');">
+            <div class="menu-item" onclick="closeMenu(); openTelegramLink('skcinebuzz');" role="button" tabindex="0" aria-label="Telegram Support Message">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
                 Support / Message
             </div>
-            <a href="#" class="menu-item" onclick="closeMenu(); alert('Privacy Policy will be updated soon!'); return false;">📜 Privacy Policy</a>
+            <a href="#" class="menu-item" onclick="closeMenu(); alert('Privacy Policy will be updated soon!'); return false;" aria-label="Privacy Policy">📜 Privacy Policy</a>
         </div>
     </div>
 
     <!-- MOVIE POSTER & TIMER OVERLAY -->
-    <div class="ad-timer-overlay" id="adTimerOverlay">
+    <div class="ad-timer-overlay" id="adTimerOverlay" role="dialog" aria-label="Download Ready Timer">
         <div class="ad-timer-box">
-            <button class="top-right-close-btn" onclick="cancelTimerOverlay()">✕</button>
+            <button class="top-right-close-btn" onclick="cancelTimerOverlay()" aria-label="Close download popup">✕</button>
             <p class="timer-status-text" id="timerBadge">⏱️ Please wait 5 seconds...</p>
             
             <div class="ad-poster-wrapper">
-                <img id="adMoviePosterImg" src="" alt="Movie Poster">
+                <img id="adMoviePosterImg" src="" alt="Selected Movie Poster">
             </div>
 
-            <!-- REAL BUTTON (NO EMOJI) -->
-            <button class="continue-btn-red" id="continueToVideoBtn" onclick="closeTimerAndOpenInAppDownload()">
+            <button class="continue-btn-red" id="continueToVideoBtn" onclick="closeTimerAndOpenInAppDownload()" aria-label="Download Movie in app">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                 DOWNLOAD IN APP
             </button>
 
-            <!-- TELEGRAM PROMO CARD (ORIGINAL allchannel97 LINK) -->
             <div class="tg-promo-box">
                 <p>Join Telegram for fastest updates & requests!</p>
-                <button class="tg-join-btn" onclick="openTelegramLink('allchannel97')">
+                <button class="tg-join-btn" onclick="openTelegramLink('allchannel97')" aria-label="Join Official Telegram Channel">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
                     JOIN TELEGRAM CHANNEL
                 </button>
@@ -1185,21 +1198,21 @@
     </div>
 
     <!-- APP UPDATE OVERLAY -->
-    <div class="update-overlay" id="updateOverlay">
+    <div class="update-overlay" id="updateOverlay" role="dialog" aria-label="App Update Available">
         <div class="update-box">
-            <img id="updateImg" src="" alt="Update">
+            <img id="updateImg" src="" alt="Update Announcement">
             <h2 id="updateTitle">App Update Available</h2>
             <p id="updateDetail">New version available! Please update.</p>
-            <a href="#" id="updateBtnLink" target="_blank" class="update-download-btn">UPDATE NOW 🚀</a>
+            <a href="#" id="updateBtnLink" target="_blank" class="update-download-btn" aria-label="Download update now">UPDATE NOW 🚀</a>
         </div>
     </div>
 
     <!-- EPISODE SELECTOR -->
-    <div class="video-player-overlay" id="episodeOverlay" style="display:none; background: #0b0b0b; overflow-y: auto; justify-content: flex-start; padding-top: 60px; z-index: 100000;">
-        <button class="video-close-btn" onclick="closeEpisodeSelector()" style="position: fixed; top: 15px; right: 15px; z-index: 100005;">✕ Back</button>
+    <div class="video-player-overlay" id="episodeOverlay" style="display:none; background: #0b0b0b; overflow-y: auto; justify-content: flex-start; padding-top: 60px; z-index: 100000;" role="dialog" aria-label="Select Episode">
+        <button class="video-close-btn" onclick="closeEpisodeSelector()" style="position: fixed; top: 15px; right: 15px; z-index: 100005;" aria-label="Back to movie list">✕ Back</button>
         <div style="text-align: center; margin-bottom: 20px; width: 100%; max-width: 600px;">
             <h2 id="seriesPopupName" style="color: #E50914; font-size: 22px; margin-bottom: 5px;">Series Name</h2>
-            <p id="seriesPopupDetail" style="color: #aaa; font-size: 13px; margin-bottom: 10px;">Detail</p>
+            <p id="seriesPopupDetail" style="color: #bbb; font-size: 13px; margin-bottom: 10px;">Detail</p>
         </div>
         <div class="movie-grid" id="episodeListContainer" style="width: 100%; max-width: 800px; padding-bottom: 50px;"></div>
     </div>
@@ -1222,8 +1235,9 @@
         let activeMatchingMovie = null; 
         let isApkEnvironment = false;
 
+        /* PERFORMANCE FIX: Reduce initial page size from 50 to 20 */
         let currentPage = 1;
-        const itemsPerPage = 50; 
+        const itemsPerPage = 20; 
 
         const githubJsonUrl = "https://raw.githubusercontent.com/sunnisk807325-ship-it/skcinebuzz/refs/heads/main/movies-2.json";
         const container = document.getElementById('movieContainer');
@@ -1251,6 +1265,45 @@
                     document.head.appendChild(preconnectLink);
                 }
             } catch (e) {}
+        }
+
+        /* SAFE IMAGE LOADER WITH LCP PRIORITY & LAZY LOADING */
+        function safeSetImage(imgElement, srcUrl, isPriority = false) {
+            if (!srcUrl) return;
+            imgElement.crossOrigin = "anonymous";
+            imgElement.referrerPolicy = "no-referrer";
+            if (isPriority) {
+                imgElement.loading = "eager";
+                imgElement.setAttribute("fetchpriority", "high");
+            } else {
+                imgElement.loading = "lazy";
+                imgElement.decoding = "async";
+            }
+            imgElement.src = srcUrl;
+            imgElement.onerror = function() {
+                this.onerror = null;
+                this.src = "https://via.placeholder.com/300x420/1a1a1a/ffffff?text=Poster";
+            };
+        }
+
+        /* GOOGLE SCHEMA INJECTOR FOR JSON MOVIES */
+        function injectMovieSchemaForGoogle(movies) {
+            if (!movies || movies.length === 0) return;
+            const movieSchemaList = movies.slice(0, 25).map(m => ({
+                "@type": "Movie",
+                "name": m.name,
+                "image": m.image,
+                "dateCreated": m.year ? m.year.toString() : "2026",
+                "genre": m.genre || m.detail || "Action, Drama"
+            }));
+
+            const scriptTag = document.createElement('script');
+            scriptTag.type = 'application/ld+json';
+            scriptTag.text = JSON.stringify({
+                "@context": "https://schema.org",
+                "@graph": movieSchemaList
+            });
+            document.head.appendChild(scriptTag);
         }
 
         /* ENVIRONMENT DETECTION (APK VS WEB) */
@@ -1401,10 +1454,10 @@
             gridContainer.innerHTML = '';
             if (downloads.length === 0) {
                 gridContainer.innerHTML = `
-                    <div style="grid-column: span 2; text-align:center; padding: 60px 10px; color:#777;">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="#555" style="margin-bottom:12px;"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    <div style="grid-column: span 2; text-align:center; padding: 60px 10px; color:#aaa;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="#666" style="margin-bottom:12px;"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                         <p style="font-size:15px; font-weight:700; color:#fff;">No downloads yet!</p>
-                        <p style="font-size:12px; margin-top:6px;">Download any movie from Home to save & watch it here offline.</p>
+                        <p style="font-size:12px; margin-top:6px; color:#bbb;">Download any movie from Home to save & watch it here offline.</p>
                     </div>`;
                 return;
             }
@@ -1415,7 +1468,7 @@
 
                 const img = document.createElement('img');
                 img.alt = item.name;
-                safeSetImage(img, item.image);
+                safeSetImage(img, item.image, false);
 
                 const statusText = item.isStoredLocally ? "✔ In-App Saved" : "⚡ Ready to Play";
 
@@ -1426,11 +1479,11 @@
                             <span style="color:#00ff88; font-size:11px; font-weight:700;">${statusText}</span>
                             <span>${item.date}</span>
                         </div>
-                        <div class="play-btn" onclick="handlePlayDownloadedItem(${index})">
+                        <div class="play-btn" onclick="handlePlayDownloadedItem(${index})" role="button" tabindex="0" aria-label="Play downloaded movie">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                             Play Now
                         </div>
-                        <div class="del-card-btn" onclick="removeSingleDownload(${index})">
+                        <div class="del-card-btn" onclick="removeSingleDownload(${index})" role="button" tabindex="0" aria-label="Delete downloaded movie">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
                             Delete
                         </div>
@@ -1520,7 +1573,6 @@
         const speedOptions = [0.75, 1.0, 1.25, 1.5, 2.0];
         let isAutoRotateLocked = false;
 
-        /* PINCH ZOOM STATE VARIABLES */
         let currentZoomScale = 1.0;
         let baseZoomScale = 1.0;
         let initialDistance = 0;
@@ -1574,7 +1626,6 @@
             playerEl.style.display = 'flex';
             document.getElementById('main-body').classList.add('body-locked');
 
-            // Hide system status bar & bottom line via Fullscreen
             const elem = document.documentElement;
             if (elem.requestFullscreen) {
                 elem.requestFullscreen().catch(() => {});
@@ -1699,7 +1750,6 @@
             showControlsTemporarily();
         }
 
-        /* TOUCH GESTURES (BLOCKED REFRESH ONLY IN PLAYER) */
         let touchStartX = 0;
         let touchStartY = 0;
         let isSwiping = false;
@@ -1745,10 +1795,8 @@
         }, { passive: true });
 
         playerEl.addEventListener('touchmove', (e) => {
-            // STOP WEBVIEW PULL-TO-REFRESH ONLY IN THIS PLAYER SCREEN
             if (e.cancelable) e.preventDefault();
 
-            // 1. PINCH ZOOM
             if (e.touches.length === 2) {
                 const newDist = getTouchDistance(e.touches[0], e.touches[1]);
                 if (initialDistance > 0) {
@@ -1760,7 +1808,6 @@
                 return;
             }
 
-            // 2. PANNING
             if (e.touches.length === 1 && currentZoomScale > 1.05) {
                 const touch = e.touches[0];
                 panOffsetX = touch.clientX - panStartX;
@@ -1769,7 +1816,6 @@
                 return;
             }
 
-            // 3. ONE FINGER SWIPE GESTURES
             if (e.touches.length === 1 && currentZoomScale <= 1.05) {
                 const touch = e.touches[0];
                 const deltaX = touch.clientX - touchStartX;
@@ -1789,7 +1835,6 @@
 
                 if (!isSwiping) return;
 
-                // VOLUME GESTURE (RIGHT SIDE)
                 if (swipeMode === 'volume') {
                     const change = -deltaY / screenHeight;
                     let newVol = currentVolumeFactor + (change * 1.5);
@@ -1799,7 +1844,6 @@
                     showRealHud('volume', `Volume ${pct}%`, (newVol / 4.0) * 100, true);
                 }
 
-                // BRIGHTNESS GESTURE (LEFT SIDE)
                 if (swipeMode === 'brightness') {
                     const change = -deltaY / screenHeight;
                     let newDim = currentBrightnessFactor - (change * 0.8);
@@ -1809,7 +1853,6 @@
                     showRealHud('brightness', `Brightness ${brightPct}%`, brightPct, true);
                 }
 
-                // SEEK GESTURE (HORIZONTAL)
                 if (swipeMode === 'seek' && videoEl.duration) {
                     const seekOffset = (deltaX / screenWidth) * 90;
                     let targetTime = initialSeekTime + seekOffset;
@@ -1830,7 +1873,6 @@
             initialDistance = 0;
         });
 
-        /* REAL APP HUD RENDERER */
         function showRealHud(type, text, fillPercent, showBar = true) {
             let svgIcon = '';
             if (type === 'volume') {
@@ -1932,17 +1974,6 @@
             }
         }
 
-        function safeSetImage(imgElement, srcUrl) {
-            if (!srcUrl) return;
-            imgElement.crossOrigin = "anonymous";
-            imgElement.referrerPolicy = "no-referrer";
-            imgElement.src = srcUrl;
-            imgElement.onerror = function() {
-                this.onerror = null;
-                this.src = "https://via.placeholder.com/300x420/1a1a1a/ffffff?text=Poster";
-            };
-        }
-
         /* SEARCH INPUT */
         function handleSearchInput() {
             const val = document.getElementById('searchBox').value.trim();
@@ -1978,6 +2009,9 @@
             matches.forEach(m => {
                 const item = document.createElement('div');
                 item.className = 'suggest-item';
+                item.setAttribute("role", "button");
+                item.setAttribute("tabindex", "0");
+                item.setAttribute("aria-label", `Select suggestion ${m.name}`);
                 item.onclick = () => {
                     document.getElementById('searchBox').value = m.name;
                     suggestBox.style.display = 'none';
@@ -1985,7 +2019,8 @@
                 };
 
                 const img = document.createElement('img');
-                safeSetImage(img, m.image);
+                img.alt = m.name;
+                safeSetImage(img, m.image, false);
 
                 const info = document.createElement('div');
                 info.className = 'suggest-info';
@@ -2121,6 +2156,9 @@
                 
                 filterMovies(); 
 
+                // Automatic schema indexing for Google Bot
+                injectMovieSchemaForGoogle(movieList);
+
                 const likePromises = movieList.map(async (movie) => {
                     const movieId = movie.id || movie.name;
                     const likes = await fetchLikes(movieId);
@@ -2166,13 +2204,13 @@
             }
         }
 
-        /* DISPLAY CARDS WITH 9/1 COMPACT PAGINATION */
+        /* DISPLAY CARDS WITH LAZY-LOAD & ARIA LABELS */
         function displayMovies(movies) {
             container.innerHTML = ""; 
             paginationContainer.innerHTML = "";
 
             if(movies.length === 0) {
-                container.innerHTML = "<p style='grid-column: span 2; text-align:center; color:#888; margin-top:30px;'>No movies found!</p>";
+                container.innerHTML = "<p style='grid-column: span 2; text-align:center; color:#aaa; margin-top:30px;'>No movies found!</p>";
                 return;
             }
 
@@ -2182,10 +2220,13 @@
             const startIndex = (currentPage - 1) * itemsPerPage;
             const paginatedMovies = movies.slice(startIndex, startIndex + itemsPerPage);
 
-            paginatedMovies.forEach(movie => {
+            paginatedMovies.forEach((movie, idx) => {
                 const movieId = movie.id || movie.name;
                 const card = document.createElement('div');
                 card.className = 'movie-card';
+                card.setAttribute("role", "button");
+                card.setAttribute("tabindex", "0");
+                card.setAttribute("aria-label", `View and play ${movie.name}`);
                 card.onclick = () => handleMovieClick(movie);
 
                 const yearInfo = movie.year ? `<span>${movie.year}</span>` : '';
@@ -2193,8 +2234,9 @@
                 const buttonText = isSeriesItem ? "Watch Episodes" : "Watch / Download";
 
                 const imgEl = document.createElement('img');
-                imgEl.alt = movie.name;
-                safeSetImage(imgEl, movie.image);
+                imgEl.alt = `${movie.name} Poster`;
+                // Lazy-load all movies in grid to speed up LCP
+                safeSetImage(imgEl, movie.image, false);
 
                 const infoDiv = document.createElement('div');
                 infoDiv.className = 'movie-info';
@@ -2221,6 +2263,7 @@
                 prevBtn.className = 'page-ctrl-btn';
                 prevBtn.innerHTML = '&laquo; Prev';
                 prevBtn.disabled = (currentPage === 1);
+                prevBtn.setAttribute("aria-label", "Previous page");
                 prevBtn.onclick = () => {
                     if (currentPage > 1) {
                         currentPage--;
@@ -2237,6 +2280,7 @@
                 nextBtn.className = 'page-ctrl-btn';
                 nextBtn.innerHTML = 'Next &raquo;';
                 nextBtn.disabled = (currentPage === totalPages);
+                nextBtn.setAttribute("aria-label", "Next page");
                 nextBtn.onclick = () => {
                     if (currentPage < totalPages) {
                         currentPage++;
@@ -2251,6 +2295,7 @@
             }
         }
 
+        /* TRENDING RENDER WITH LCP IMAGE PREFETCH */
         function renderTrendingSection() {
             trendingContainer.innerHTML = "";
             const sortedByClicks = [...movieList].sort((a, b) => (b.likes || 0) - (a.likes || 0));
@@ -2260,20 +2305,24 @@
                 const movieId = movie.id || movie.name;
                 const trendCard = document.createElement('div');
                 trendCard.className = 'trend-card';
+                trendCard.setAttribute("role", "button");
+                trendCard.setAttribute("tabindex", "0");
+                trendCard.setAttribute("aria-label", `Trending #${index + 1}: ${movie.name}`);
                 trendCard.onclick = () => handleMovieClick(movie);
                 
                 const yearBadge = movie.year ? `<span>| ${movie.year}</span>` : '';
 
                 const imgEl = document.createElement('img');
-                imgEl.alt = movie.name;
-                safeSetImage(imgEl, movie.image);
+                imgEl.alt = `${movie.name} Trending Poster`;
+                // Priority eager loading for first 2 items to fix LCP
+                safeSetImage(imgEl, movie.image, index < 2);
 
                 trendCard.innerHTML = `<div class="trend-badge">#${index + 1}</div>`;
                 trendCard.appendChild(imgEl);
 
                 const info = document.createElement('div');
                 info.innerHTML = `
-                    <h4>${movie.name}</h4>
+                    <h3>${movie.name}</h3>
                     <div class="meta-info">
                         <span class="like-display">👍 <span data-id="${movieId}">${movie.likes || 0}</span></span>
                         ${yearBadge}
@@ -2335,7 +2384,7 @@
             const continueBtn = document.getElementById('continueToVideoBtn');
             const posterImg = document.getElementById('adMoviePosterImg');
 
-            safeSetImage(posterImg, posterUrl || "https://via.placeholder.com/400x180/1a1a1a/ffffff?text=Sk+CineBuzz");
+            safeSetImage(posterImg, posterUrl || "https://via.placeholder.com/400x180/1a1a1a/ffffff?text=Sk+CineBuzz", true);
 
             overlay.style.display = 'flex';
             overlay.scrollTop = 0; 
@@ -2381,6 +2430,9 @@
                 movie.episodes.forEach((ep) => {
                     const epCard = document.createElement('div');
                     epCard.className = 'movie-card';
+                    epCard.setAttribute("role", "button");
+                    epCard.setAttribute("tabindex", "0");
+                    epCard.setAttribute("aria-label", `Play episode ${ep.title}`);
                     epCard.onclick = (e) => { 
                         e.stopPropagation(); 
                         triggerTimerAdAndPlay(ep.url, ep.poster || ep.image || movie.poster || movie.image, {
@@ -2394,8 +2446,8 @@
                     const epDetailText = ep.detail || movie.genre || movie.detail || 'Episode Details';
                     
                     const img = document.createElement('img');
-                    img.alt = ep.title;
-                    safeSetImage(img, epImage);
+                    img.alt = `${ep.title} Thumbnail`;
+                    safeSetImage(img, epImage, false);
 
                     epCard.appendChild(img);
                     epCard.innerHTML += `
@@ -2411,7 +2463,7 @@
                     listContainer.appendChild(epCard);
                 });
             } else {
-                listContainer.innerHTML = "<p style='grid-column: span 2; text-align:center; color:#888;'>No episodes available.</p>";
+                listContainer.innerHTML = "<p style='grid-column: span 2; text-align:center; color:#aaa;'>No episodes available.</p>";
             }
             
             overlay.style.display = 'flex';
